@@ -7,8 +7,11 @@ on:
 jobs: 
  build: 
   runs-on: ubuntu-latest
+  defaults:
+    run:
+      working-directory: ./first_pipeline
   
- steps:
+  steps:
    - name: Checkout Code
      uses: actions/checkout@v4
    - name: Set up Node.js
@@ -16,9 +19,10 @@ jobs:
      with: 
       node-version: '16'  
       cache: 'npm'
+      cache-dependency-path: './package-lock.json'
    - name: Install dependencies
      run: npm install
    - name: Run Tests
      run: npm test
    - name: Run app
-     run: npm start
+     run: npm run run
