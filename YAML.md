@@ -176,3 +176,39 @@ Nếu dự án của bạn chuyển sang sử dụng **GitLab CI/CD** (cấu hì
     *(Ký hiệu `:/` chỉ thị cho Git thêm mọi thay đổi tính từ thư mục gốc của repository).*
   * Hoặc sử dụng `git add -A` (hoặc `git add --all`).
 
+### ❓ Tại sao file workflow đã hiện trên giao diện GitHub nhưng khi push code lên nhánh chính (`main`) vẫn không chạy ("0 workflow runs")?
+* **Hiện tượng:** Bạn đã push file `.github/workflows/1_pipeline.yaml` thành công, tên workflow đã xuất hiện trong danh sách của tab Actions trên GitHub nhưng khi bạn push thêm commit mới, workflow vẫn không tự chạy và báo *"This workflow has no runs yet"*.
+* **Nguyên nhân:** Lỗi **thụt lề (indentation) không chuẩn** trong file YAML. 
+  * Cú pháp YAML quy chuẩn sử dụng thụt dòng bằng **khoảng trắng (spaces)** với số lượng chẵn (thường là 2 hoặc 4 spaces) để phân cấp cha-con. 
+  * Nếu bạn thụt lề lẻ (ví dụ: 1 space hoặc 3 spaces), trình đọc YAML của GitHub Actions có thể bị lỗi phân tích cú pháp trigger (`on.push.branches`) hoặc cấu trúc jobs, dẫn đến việc bỏ qua trigger kích hoạt chạy mà không báo lỗi cú pháp rõ ràng.
+* **Cách khắc phục & Lưu ý:**
+  * **Tuyệt đối không dùng phím Tab** để thụt lề trong YAML.
+  * Hãy luôn tuân thủ nguyên tắc thụt lề đồng nhất (nên là số chẵn khoảng trắng). Ví dụ:
+    ```yaml
+    name: CI pipeline       # Cấp 0 (không thụt lề)
+    on:                     # Cấp 0
+      push:                 # Cấp 1 (thụt 2 spaces)
+        branches:           # Cấp 2 (thụt 4 spaces)
+          - main            # Cấp 3 (thụt 6 spaces)
+    ```
+  * Hãy cài đặt thêm extension kiểm tra cú pháp YAML trên editor của bạn (như extension **YAML** của Red Hat trên VS Code) hoặc dán code vào các trang online như [YAML Lint](http://www.yamllint.com/) để xác thực trước khi commit.
+
+### ❓ Tại sao workflow chạy bị báo lỗi không tìm thấy `package.json` hoặc bị treo (timeout)?
+* **Hiện tượng:** Khi workflow chạy, bước cài đặt thư viện (`npm install`) báo lỗi không tìm thấy file hoặc ứng dụng bị chạy treo liên tục không kết thúc được.
+* **Nguyên nhân:**
+  * Mặc định, mọi lệnh trong phần `run` của workflow đều được thực thi tại **thư mục gốc của repository**. Nếu project Node.js của bạn nằm trong một thư mục con (ví dụ: `first_pipeline/`), runner sẽ không thấy `package.json` để cài đặt.
+  * Nếu chạy ở thư mục gốc chứa project lớn có sẵn lệnh `npm start` để khởi chạy server (như Express), lệnh này sẽ chạy liên tục và treo tiến trình của GitHub Actions cho đến khi hết thời gian chạy tối đa (timeout).
+  * Trong thư mục con của bạn có thể không định nghĩa script `start` mà định nghĩa script khác (ví dụ: `"run": "node index.js"`).
+* **Cách khắc phục:**
+  * Thêm cấu hình `working-directory` vào cấp độ `jobs` để trỏ toàn bộ câu lệnh về thư mục con:
+    ```yaml
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: ./first_pipeline # Chỉ định thư mục con
+    ```
+  * Thay đổi lệnh chạy app cho phù hợp với script được khai báo trong `package.json` của thư mục đó (ví dụ: dùng `npm run run` thay vì `npm start` nếu không định nghĩa script `start`).
+
+
