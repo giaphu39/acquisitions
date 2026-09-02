@@ -1,6 +1,6 @@
 # 🚀 Hướng Dẫn Học Tập Lập Trình Web Backend Chuyên Nghiệp
 
-_Tài liệu học tập toàn diện dựa trên quy trình thiết lập trong [demo_raw_quickstart.md](file:///e:/08_Project/Devops_Course/acquisitions/demo_raw_quickstart.md)_
+_Tài liệu học tập toàn diện dựa trên quy trình thiết lập trong [demo_raw_quickstart.md](./demo_raw_quickstart.md)_
 
 Tài liệu này giải thích chi tiết toàn bộ kiến trúc, giải đáp tất cả câu hỏi kỹ thuật, phân tích sâu các thư viện bảo mật, kiểm thử, Docker, CI/CD và quy trình phát triển Web Backend hiện đại sử dụng hệ sinh thái **Modern Node.js (ES Modules), Express, Drizzle ORM, Postgres (Neon), Arcjet Security, Jest và Docker**.
 
@@ -274,7 +274,7 @@ Thư viện `@neondatabase/serverless` được thiết kế để kết nối t
 
 Nếu không cấu hình lại, driver Neon sẽ cố gắng gửi request ra Cloud theo chuẩn TLS bảo mật và bị **lỗi từ chối kết nối (Connection Refused/SSL Error)** khi chạy qua container local.
 
-#### Cách khắc phục trong [`src/config/database.js`](file:///e:/08_Project/Devops_Course/acquisitions/src/config/database.js):
+#### Cách khắc phục trong [`src/config/database.js`](./src/config/database.js):
 
 ```javascript
 import 'dotenv/config';
@@ -321,7 +321,7 @@ _Trong Quickstart có câu hỏi: "khi test thấy role = 'admin' chỉnh đư�
 
 #### Phân tích lỗ hổng (Mass Assignment / Privilege Escalation):
 
-Trong file [`src/validations/auth.validation.js`](file:///e:/08_Project/Devops_Course/acquisitions/src/validations/auth.validation.js), schema đăng ký hiện tại định nghĩa:
+Trong file [`src/validations/auth.validation.js`](./src/validations/auth.validation.js), schema đăng ký hiện tại định nghĩa:
 
 ```javascript
 export const signupSchema = z.object({
@@ -380,7 +380,7 @@ export const signupSchema = z.object({
 
 _Trong Quickstart có câu hỏi: "tạo tests/app.test.js: file này làm gì? các nội dung trong đây?"_
 
-#### Mục đích của file [`tests/app.test.js`](file:///e:/08_Project/Devops_Course/acquisitions/tests/app.test.js):
+#### Mục đích của file [`tests/app.test.js`](./tests/app.test.js):
 
 Đây là file **Kiểm thử tích hợp (Integration Test)**. Sử dụng thư viện **Supertest** để gửi request HTTP giả lập trực tiếp vào ứng dụng Express (`app`) mà không cần tốn tài nguyên khởi động HTTP Server thật trên cổng mạng.
 
@@ -432,7 +432,7 @@ Vì Jest ra đời từ thời CommonJS, khi dự án được cấu hình `"typ
 
 _Trong Quickstart có đề cập: "đọc yêu cầu để chạy actions github là required secrets..."_
 
-Để quy trình CI/CD tự động trong [`.github/workflows/docker-build-and-push.yml`](file:///e:/08_Project/Devops_Course/acquisitions/.github/workflows/docker-build-and-push.yml) có thể đóng gói Docker Image và tải lên Docker Hub, bạn cần khai báo các biến bảo mật (Repository Secrets) trên GitHub:
+Để quy trình CI/CD tự động trong [`.github/workflows/docker-build-and-push.yml`](./.github/workflows/docker-build-and-push.yml) có thể đóng gói Docker Image và tải lên Docker Hub, bạn cần khai báo các biến bảo mật (Repository Secrets) trên GitHub:
 
 | Tên Secret trên GitHub  | Ý nghĩa và nguồn lấy                                                             |
 | :---------------------- | :------------------------------------------------------------------------------- |
@@ -473,7 +473,7 @@ _Trong Quickstart có đề cập: "đọc yêu cầu để chạy actions githu
 
 ### Phân Tích Chi Tiết Framework Bảo Mật Arcjet
 
-Trong file [`src/config/arcjet.js`](file:///e:/08_Project/Devops_Course/acquisitions/src/config/arcjet.js) và [`src/middleware/security.middleware.js`](file:///e:/08_Project/Devops_Course/acquisitions/src/middleware/security.middleware.js), hệ thống thiết lập 3 lớp bảo vệ thời gian thực:
+Trong file [`src/config/arcjet.js`](./src/config/arcjet.js) và [`src/middleware/security.middleware.js`](./src/middleware/security.middleware.js), hệ thống thiết lập 3 lớp bảo vệ thời gian thực:
 
 ```mermaid
 graph TD
@@ -607,7 +607,7 @@ Trong quá trình phát triển và kiểm thử API Backend với **Postman**, 
 
 - **Nguyên nhân**: Postman luôn tự động gửi header `User-Agent: PostmanRuntime/x.x.x`. Thư viện bảo mật **Arcjet** mặc định coi các User-Agent này là Automated Tool / Bot và chặn bằng lỗi `403 Forbidden: Automated requests are not allowed`.
 - **Giải pháp chuẩn trong mã nguồn**:
-  - Trong [`src/middleware/security.middleware.js`](file:///e:/08_Project/Devops_Course/acquisitions/src/middleware/security.middleware.js), chỉ áp dụng chặn Bot nghiêm ngặt khi chạy môi trường `production`.
+  - Trong [`src/middleware/security.middleware.js`](./src/middleware/security.middleware.js), chỉ áp dụng chặn Bot nghiêm ngặt khi chạy môi trường `production`.
   - Ở môi trường `development`, hệ thống tự động cho phép Postman, cURL, Insomnia và các REST client hoạt động để phục vụ việc lập trình và kiểm thử.
 
 ### 8.3. Quản Lý Arcjet Sliding Window Rate Limiting (Lỗi 403 `Too many requests`)
@@ -635,4 +635,4 @@ Trong quá trình phát triển và kiểm thử API Backend với **Postman**, 
 
 > [!TIP]
 > **Tài Liệu Postman Collection Chi Tiết**:
-> Xem toàn bộ 9 API mẫu và mã JSON Import vào Postman tại [**`POSTMAN_GUIDE.md`**](file:///e:/08_Project/Devops_Course/acquisitions/POSTMAN_GUIDE.md).
+> Xem toàn bộ 9 API mẫu và mã JSON Import vào Postman tại [**`POSTMAN_GUIDE.md`**](./POSTMAN_GUIDE.md).

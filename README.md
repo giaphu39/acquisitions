@@ -1,172 +1,154 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/H5FAxTBuNM8" target="_blank">
-      <img src="public/readme/hero.webp" alt="Project Banner">
-    </a>
+  <a href="https://youtu.be/H5FAxTBuNM8" target="_blank">
+    <img src="public/readme/hero.webp" alt="Project Banner">
+  </a>
   <br />
 
   <div>
-<img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Neon%20Postgres-2496ED?style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Drizzle%20ORM-FFDF00?style=for-the-badge&logo=drizzle&logoColor=black"/>
-
+    <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+    <img src="https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+    <img src="https://img.shields.io/badge/-Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+    <img src="https://img.shields.io/badge/-Neon%20Postgres-2496ED?style=for-the-badge&logo=postgresql&logoColor=white"/>
+    <img src="https://img.shields.io/badge/-Drizzle%20ORM-FFDF00?style=for-the-badge&logo=drizzle&logoColor=black"/>
+    <img src="https://img.shields.io/badge/-Arcjet%20Security-000000?style=for-the-badge&logo=shield&logoColor=white"/>
   </div>
 
-  <h3 align="center">Build a Scalable Production Ready API</h3>
+  <h2 align="center">Hệ Thống Acquisitions API Chuẩn Production & DevOps</h2>
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/watch?v=XUkNR-JfHwo" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
+  <p align="center">
+    Dự án xây dựng Backend RESTful API hoàn chỉnh với Node.js, Express, Neon Postgres, Drizzle ORM, Arcjet Security, Jest Testing, Docker Containerization và GitHub Actions CI/CD.
+  </p>
+
+  <p align="center">
+    🔗 <b>Repository gốc</b>: <a href="https://github.com/adrianhajdin/acquisitions" target="_blank"><b>adrianhajdin/acquisitions</b></a> &nbsp;|&nbsp;
+    🎥 <b>Video Tutorial gốc</b>: <a href="https://www.youtube.com/watch?v=XUkNR-JfHwo" target="_blank"><b>JavaScript Mastery YouTube</b></a> &nbsp;|&nbsp;
+    📄 <b>README gốc (Tiếng Anh)</b>: <a href="./README_ROOT_EN.md"><b>README_ROOT_EN.md</b></a>
+  </p>
 </div>
 
-## 📋 <a name="table">Table of Contents</a>
+---
 
-1. ✨ [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
+## 📚 HỆ THỐNG TÀI LIỆU DỰ ÁN (DOCUMENTATION HUB)
 
-## 🚨 Tutorial
+Để nhanh chóng nắm bắt và làm chủ toàn bộ dự án, hãy tham khảo các tài liệu chuyên biệt dưới đây:
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+| Tài liệu | Ý nghĩa & Nội dung chính nắm giữ |
+| :--- | :--- |
+| [**`README_ROOT_EN.md`**](./README_ROOT_EN.md) | **Original English README**: Bản lưu trữ tài liệu README gốc bằng tiếng Anh từ repository chính thức [adrianhajdin/acquisitions](https://github.com/adrianhajdin/acquisitions). |
+| [**`READ_PROJECT.md`**](./READ_PROJECT.md) | **Lộ trình đọc hiểu toàn diện**: Hướng dẫn 10 bước đọc code đối chiếu với video gốc, các câu hỏi tự vấn kiểm tra mức độ hiểu và Blueprint từng lệnh để tự code lại từ số 0. |
+| [**`VIETNAMESE_GUIDE.md`**](./VIETNAMESE_GUIDE.md) | **Hướng dẫn khởi chạy nhanh**: Cách chạy dự án qua 3 chế độ (Node Host, Docker Compose Dev với Neon Local, Docker Prod), quản trị DB Drizzle và xử lý sự cố. |
+| [**`POSTMAN_GUIDE.md`**](./POSTMAN_GUIDE.md) | **Hướng dẫn kiểm thử Postman**: Chi tiết cách test 9 API, cơ chế HttpOnly Cookie tự động (không cần copy token), kịch bản test phân quyền RBAC và mã JSON Collection import nhanh. |
+| [**`Learning_Demo.md`**](./Learning_Demo.md) | **Kiến thức chuyên sâu & FAQ**: Giải đáp chi tiết 13 câu hỏi kỹ thuật, sơ đồ cấu trúc thư mục phân tầng, phân tích bảo mật Arcjet và phòng chống lỗ hổng Privilege Escalation. |
+| [**`demo_raw_quickstart.md`**](./demo_raw_quickstart.md) | **Ghi chú tiến trình thô**: Ghi lại từng bước gõ lệnh/viết code tuần tự từ video gốc cùng những thắc mắc, câu hỏi phát sinh trong quá trình học. |
+| [**`DOCKER_SETUP.md`**](./DOCKER_SETUP.md) | **Hướng dẫn Docker chi tiết**: Hướng dẫn cấu hình Docker Compose, multi-stage build và cơ chế hoạt động của Neon Local proxy. |
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+---
 
-<a href="https://youtu.be/H5FAxTBuNM8" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+## ⚙️ CÔNG NGHỆ CỐT LÕI (TECH STACK)
 
-## <a name="introduction">✨ Introduction</a>
+- **[Node.js](https://nodejs.org/) (v20+ ESM)**: Runtime JavaScript hiện đại với chuẩn Native ES Modules và cờ `--watch` tích hợp sẵn.
+- **[Express.js](https://expressjs.com/) (v5)**: Web Framework xử lý định tuyến (routing), middleware và RESTful APIs.
+- **[Neon Serverless Postgres](https://neon.tech/)**: Cơ sở dữ liệu PostgreSQL trên Cloud với khả năng autoscaling và hỗ trợ Neon Local cho môi trường Dev offline.
+- **[Drizzle ORM](https://orm.drizzle.team/) & Drizzle Kit**: ORM tối ưu hiệu năng, an toàn kiểu dữ liệu (type-safe), tự động sinh và thực thi migration SQL.
+- **[Arcjet Security](https://arcjet.com/)**: Lớp bảo vệ chuyên sâu với Web Application Shield (chống SQLi, XSS), Bot Detection và Sliding Window Rate Limiting theo Role.
+- **[Zod](https://zod.dev/)**: Thư viện xác thực Schema dữ liệu đầu vào (Input Validation).
+- **[Bcrypt](https://www.npmjs.com/package/bcrypt) & [JWT](https://jwt.io/)**: Mã hóa mật khẩu an toàn và xác thực người dùng qua HttpOnly Cookies.
+- **[Winston](https://github.com/winstonjs/winston) & [Morgan](https://github.com/expressjs/morgan)**: Hệ thống ghi log có cấu trúc và giám sát luồng traffic HTTP.
+- **[Jest](https://jestjs.io/) & [Supertest](https://github.com/ladjs/supertest)**: Bộ công cụ kiểm thử tích hợp (Integration Testing) tự động cho toàn bộ endpoints.
+- **[Docker](https://www.docker.com/) & Docker Compose**: Container hóa ứng dụng với Multi-stage build và cấu hình tách biệt Dev / Prod.
+- **[GitHub Actions](https://github.com/features/actions)**: Tự động hóa quy trình CI/CD: Linting ➔ Testing & Coverage ➔ Docker Hub Image Publishing.
 
-Master DevOps by taking an API from code to production with Docker, Kubernetes, Git & GitHub, Warp, and CI/CD Actions! Build a scalable backend using Node.js, Express.js, Neon Postgres, and Drizzle ORM, while testing ensures reliability at every step. Learn to containerize services, orchestrate deployments, automate pipelines, and monitor applications—perfect for developers who want hands-on experience shipping robust, production-ready systems.
+---
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+## 🔋 TÍNH NĂNG NỔI BẬT (FEATURES)
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+- 👉 **Native Subpath Imports**: Sử dụng bí danh đường dẫn sạch sẽ dạng `#config/*`, `#services/*`, `#routes/*` thay vì `../../..`.
+- 👉 **Stateless JWT via HttpOnly Cookies**: Xác thực bảo mật, chống tấn công XSS và đánh cắp token từ trình duyệt.
+- 👉 **Role-Based Access Control (RBAC)**: Phân quyền chặt chẽ giữa `admin` và `user` thông qua middleware `authenticateToken` và `requireRole`.
+- 👉 **Multi-Tier App Defense**: Tích hợp Arcjet chặn bot xấu, giới hạn tần suất request (Guest: 20 req/m, User: 30 req/m, Admin: 50 req/m).
+- 👉 **Dual Environment Strategy**:
+  - *Dev Mode*: Kết nối qua Neon Local proxy, tự động hot-reload bằng `node --watch`.
+  - *Prod Mode*: Kết nối trực tiếp Neon Cloud PostgreSQL qua HTTPS/TLS, image Docker nhẹ và chạy non-root user.
+- 👉 **Automated CI/CD Pipeline**: Kiểm tra chất lượng mã nguồn (ESLint + Prettier), chạy Integration Test và tự động build/push Docker Image lên Docker Hub khi push code.
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+---
 
-- **[Arcjet](https://jsm.dev/dops25-arcjet)** is a developer-first security layer that enables you to protect your applications with minimal code. It offers features like bot protection, rate limiting, email validation, and defense against common attacks. Arcjet's SDK integrates seamlessly into your application, providing real-time security decisions without the need for additional infrastructure.
+## 🤸 KHỞI CHẠY NHANH (QUICK START)
 
-- **[Docker](https://www.docker.com/)** is a leading containerization platform that allows you to package applications along with all their dependencies into portable, lightweight containers. This ensures consistent behavior across different environments, simplifies deployment, and makes scaling applications more efficient.
-
-- **[Kubernetes](https://kubernetes.io/)** is an open-source orchestration system designed to automate the deployment, scaling, and management of containerized applications. It handles tasks like load balancing, self-healing, and rolling updates, making it essential for running applications reliably at scale.
-
-- **[Warp](https://jsm.dev/dops25-warp)** is a modern terminal built in Rust, optimized for developer productivity. It offers features like AI-assisted commands, easy collaboration, command history search, and a faster, more intuitive interface compared to traditional terminals.
-
-- **[Node.js](https://nodejs.org/)** is a fast, event-driven JavaScript runtime built on Chrome’s V8 engine. It enables developers to build scalable, high-performance server-side applications and APIs using JavaScript on both the client and server side.
-
-- **[Express.js](https://expressjs.com/)** is a minimal and flexible Node.js web application framework. It provides robust features for building APIs and server-side applications, including routing, middleware support, and simplified request/response handling.
-
-- **[Neon Postgres](https://jsm.dev/dops25-neon)** is a fully managed, serverless Postgres database designed for modern cloud applications. It offers autoscaling, branching for development workflows, and simplifies database management without compromising performance.
-
-- **[Drizzle ORM](https://orm.drizzle.team/)** is a TypeScript-first, lightweight ORM for SQL databases. It provides type safety, schema migrations, and an intuitive API for building reliable and maintainable database queries.
-
-- **[Zod](https://zod.dev/)** is a TypeScript-first schema validation library that ensures runtime type safety. It helps developers validate data structures, enforce strict type checks, and catch errors early in the development process.
-
-## <a name="features">🔋 Features</a>
-
-👉 **Absolute Imports**: Clean import paths using `#` prefix aliases for more organized and readable code.
-
-👉 **Business Listings**: Create, update, delete, and browse business listings efficiently.
-
-👉 **Database Integration**: Integrate PostgreSQL with Drizzle ORM, including migrations for schema management.
-
-👉 **Deal Management**: Create deals on listings, accept or reject offers, and track deal status.
-
-👉 **Docker Support**: Full containerization with development and production environments for consistent deployment.
-
-👉 **ESLint + Prettier**: Enforce code linting and formatting rules for cleaner, consistent code.
-
-👉 **Health Monitoring**: Endpoint to check system health and monitor overall application status.
-
-👉 **Hot Reload**: Development server automatically restarts on file changes for faster iteration.
-
-👉 **Jest Testing**: Framework for unit and integration testing with SuperTest for HTTP endpoints.
-
-👉 **Request Validation**: Validate all API inputs using Zod schemas to ensure data integrity.
-
-👉 **Role-Based Access Control**: Implement admin and user roles with permission middleware for secure operations.
-
-👉 **Structured Logging**: Winston-based logging throughout the application for better monitoring and debugging.
-
-👉 **User Authentication & Authorization**: JWT-based authentication supporting signup, signin, and signout workflows.
-
-👉 **User Management**: CRUD operations for user accounts, enabling easy administration and management.
-
-And many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
-
-```bash
-git clone https://github.com/adrianhajdin/acquisitions.git
-cd acquisitions
-```
-
-**Installation**
-
-Install the project dependencies using npm:
-
+### 1. Cài đặt thư viện
 ```bash
 npm install
 ```
 
-**Set Up Environment Variables**
-
-Create a new file named `.env` in the root of your project and add the following content:
-
+### 2. Thiết lập Biến Môi Trường
+Tạo file `.env` tại thư mục gốc của dự án:
 ```env
-# Server Configuration
 PORT=3000
 NODE_ENV=development
 LOG_LEVEL=info
 
-# Database Configuration
-DATABASE_URL=
+# Chuỗi kết nối Neon Postgres (Lấy từ https://console.neon.tech/)
+DATABASE_URL=postgresql://user:password@endpoint.neon.tech/neondb?sslmode=require
 
-# Arcjet
-ARCJET_KEY=
+# Arcjet Key (Lấy từ https://arcjet.com/)
+ARCJET_KEY=ajkey_your_key_here
+
+# JWT Secret Key
+JWT_SECRET=your_super_secret_jwt_key
 ```
 
-Replace the placeholder values with your real credentials. You can get these by signing up at: [**Arcjet**](https://jsm.dev/dops25-arcjet), [**Neon**](https://jsm.dev/dops25-neon).
+### 3. Đồng bộ Database Migration
+```bash
+npm run db:generate   # Tạo file migration SQL từ schema models
+npm run db:migrate    # Áp dụng migration vào CSDL
+```
 
-**Running the Project**
+### 4. Khởi chạy Server
+- **Chạy trực tiếp trên máy Host (Local Node.js)**:
+  ```bash
+  npm run dev
+  ```
+- **Chạy môi trường Dev hoàn chỉnh với Docker & Neon Local**:
+  ```bash
+  npm run dev:docker
+  ```
+
+Truy cập kiểm tra trạng thái tại: [http://localhost:3000/health](http://localhost:3000/health).
+
+---
+
+## 📋 BẢNG TRA CỨU SCRIPTS (NPM SCRIPTS)
+
+| Lệnh | Chức năng thực hiện |
+| :--- | :--- |
+| `npm run dev` | Khởi động server với chế độ Hot-reload (`node --watch`) |
+| `npm start` | Chạy server một lần ở chế độ production |
+| `npm run lint` | Quét kiểm tra lỗi cú pháp và quy chuẩn code (ESLint) |
+| `npm run lint:fix` | Tự động sửa các lỗi linting có thể tự fix |
+| `npm run format` | Tự động định dạng toàn bộ mã nguồn bằng Prettier |
+| `npm run db:generate` | Sinh file SQL migration từ thư mục `src/models/` |
+| `npm run db:migrate` | Áp dụng SQL migration vào database |
+| `npm run db:studio` | Mở giao diện Drizzle Studio trực quan trên trình duyệt |
+| `npm test` | Chạy toàn bộ các bài kiểm thử tự động với Jest & Supertest |
+| `npm run dev:docker` | Chạy container môi trường Development (có Neon Local proxy) |
+| `npm run prod:docker` | Chạy container môi trường Production |
+
+---
+
+## 🧪 KIỂM THỬ API VỚI POSTMAN
+
+Toàn bộ 9 API mẫu, kịch bản test phân quyền và file JSON Collection có sẵn tại [**`POSTMAN_GUIDE.md`**](./POSTMAN_GUIDE.md).
 
 ```bash
-npm run dev
+# 1. Health Check
+curl http://localhost:3000/health
+
+# 2. Đăng ký tài khoản
+curl -X POST http://localhost:3000/api/auth/sign-up \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Admin User","email":"admin@example.com","password":"Password123"}'
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
-
-## <a name="links">🔗 Assets</a>
-
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/dops25-kit)**.
-
-<a href="https://jsm.dev/dops25-kit" target="_blank">
-  <img src="public/readme/videokit.webp" alt="Video Kit Banner">
-</a>
-
-## <a name="more">🚀 More</a>
-
-**Advance your skills with Next.js Pro Course**
-
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
-
-<a href="https://jsm.dev/dops25-jsm" target="_blank">
-  <img src="public/readme/jsmpro.webp" alt="Project Banner">
-</a>
+---
+*Dự án phát triển dựa trên [adrianhajdin/acquisitions](https://github.com/adrianhajdin/acquisitions) thuộc khóa học DevOps & Backend API Architecture.*
