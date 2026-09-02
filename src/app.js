@@ -22,29 +22,28 @@ app.use(
   })
 );
 
-app.use(securityMiddleware);
-
+// Public health & info endpoints (không cần qua bot/rate-limit middleware)
 app.get('/', (req, res) => {
   logger.info('Hello from Acquisitions!');
-
   res.status(200).send('Hello from Acquisitions!');
 });
 
 app.get('/health', (req, res) => {
-  res
-    .status(200)
-    .json({
-      status: 'OK',
-      timestamp: new Date().toISOString(),
-      uptime: process.uptime(),
-    });
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+  });
 });
 
 app.get('/api', (req, res) => {
   res.status(200).json({ message: 'Acquisitions API is running!' });
 });
 
-app.use('/api/auth', authRoutes); // api/auth/sign-in sẽ dấn đến route được định nghĩa
+// Security & rate-limiting middleware cho các API nghiệp vụ
+app.use(securityMiddleware);
+
+app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
 
 app.use((req, res) => {
